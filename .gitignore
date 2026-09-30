@@ -1,0 +1,21 @@
+# Contexto de ferramentas de IA / editor
+CLAUDE.md
+.claude/
+.mcp.json
+.vscode/
+
+# Anexos enviados pelos usuários (dados reais, nunca versionar)
+storage/anexos/*
+!storage/anexos/.gitkeep
+
+# Marca da empresa (coloque a sua em assets/img/logo.png)
+assets/img/logo*
+
+# Configuração local (senha do banco) e logs
+config.local.php
+.env
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

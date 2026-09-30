@@ -1,0 +1,426 @@
+/* --- 1. VARIÁVEIS E GLOBAIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --cor-principal: #f97316;
+    --cor-principal-hover: #ea580c;
+    --cor-header: #0f172a;
+    --cor-fundo: #f1f5f9;
+    --cor-texto: #334155;
+    --cor-texto-claro: #64748b;
+    --cor-borda: #cbd5e1;
+    --branco: #ffffff;
+    --vermelho-perigo: #ef4444;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 2. CABEÇALHO --- */
+.portal-header {
+    background-color: var(--cor-header);
+    padding: 15px 0;
+    color: var(--branco);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img { height: 40px; width: auto; }
+
+.user-info { display: flex; align-items: center; gap: 20px; font-size: 0.95rem; }
+
+.logout-button {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.logout-button:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+/* --- 3. MENU --- */
+.portal-nav {
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+.portal-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portal-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.portal-nav a:hover { color: var(--branco); background-color: rgba(255,255,255,0.05); }
+.portal-nav a.active { color: var(--cor-principal); border-bottom-color: var(--cor-principal); background-color: rgba(249, 115, 22, 0.05); }
+
+/* --- 4. CONTEÚDO --- */
+.main-content { flex: 1; padding: 40px 0; }
+
+.main-title-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+h1 { color: #0f172a !important; margin: 0; font-size: 1.75rem; }
+
+.button-primary {
+    background-color: var(--cor-principal);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.button-primary:hover { background-color: var(--cor-principal-hover); transform: translateY(-2px); }
+
+/* --- 5. FILTROS E TABELAS --- */
+.filters {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    flex: 1;
+    min-width: 200px;
+    font-family: inherit;
+    /* Correção de cor */
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+
+.filters .filter-button {
+    background-color: var(--cor-header);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.table-container {
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+th, td { padding: 18px 20px; text-align: left; border-bottom: 1px solid var(--cor-fundo); }
+thead { background-color: #f8fafc; }
+th { font-size: 0.75rem; text-transform: uppercase; color: var(--cor-texto-claro); font-weight: 700; }
+tbody tr:hover { background-color: #f8fafc; }
+
+/* Status Badges */
+.status { padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+.status-recebido { background-color: #e0e7ff; color: #3730a3; }
+.status-aguardando { background-color: #fef3c7; color: #92400e; }
+.status-produzindo { background-color: #dbeafe; color: #1e40af; }
+.status-pronto { background-color: #d1fae5; color: #065f46; }
+.status-retirado { background-color: #f3f4f6; color: #4b5563; }
+
+.details-button {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-claro);
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.details-button:hover { border-color: var(--cor-principal); color: var(--cor-principal); background-color: #fff7ed; }
+
+
+/* --- 6. ESTILOS ESPECÍFICOS DOS RELATÓRIOS (Corrigido para Flexbox) --- */
+.stats-grid {
+    display: flex;           /* Flexbox: melhor controle de alinhamento */
+    flex-wrap: wrap;         /* Quebra linha se faltar espaço */
+    gap: 25px;               /* Espaço entre os cards */
+    justify-content: flex-start; /* Alinha tudo à esquerda */
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;     /* Bordas mais arredondadas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #e2e8f0;
+    
+    /* Tamanho Inteligente */
+    flex: 1 1 260px;         /* Largura ideal 260px, mas flexível */
+    max-width: 350px;        /* Trava a largura máxima para não ficar gigante */
+    
+    /* Interatividade */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #f8fafc;
+}
+
+.card-icon {
+    width: 60px;             /* Ícone um pouco maior */
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Cores dos Ícones */
+.icon-recebido { background-color: #e0e7ff; color: #3730a3; }
+.icon-aguardando { background-color: #fef3c7; color: #92400e; }
+.icon-producao { background-color: #dbeafe; color: #1e40af; }
+.icon-pronto { background-color: #d1fae5; color: #065f46; }
+.icon-finalizado { background-color: #f3f4f6; color: #4b5563; }
+
+.card-info { overflow: hidden; display: flex; flex-direction: column; }
+.card-title { font-size: 0.9rem; color: #64748b; margin-bottom: 5px; font-weight: 600; }
+.card-value { font-size: 2rem; font-weight: 700; color: #0f172a; line-height: 1; }
+
+/* --- 7. MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(2px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.hidden { display: none; opacity: 0; }
+
+.modal-content {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%; max-width: 600px;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    animation: slideUp 0.3s ease-out;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-close {
+    position: absolute; top: 15px; right: 20px;
+    background: none; border: none; font-size: 2rem; color: #cbd5e1; cursor: pointer;
+}
+.modal-close:hover { color: var(--vermelho-perigo); }
+
+.modal-content h2 { color: var(--cor-header); border-bottom: 1px solid var(--cor-fundo); padding-bottom: 15px; margin-top: 0; }
+
+/* --- 8. RODAPÉ --- */
+.portal-footer {
+    background-color: var(--branco);
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.85rem;
+    color: var(--cor-texto-claro);
+    margin-top: auto;
+}
+
+/* --- 9. CORREÇÃO DE INPUTS --- */
+input, select, textarea { color: #1e293b !important; }
+::placeholder { color: #94a3b8 !important; opacity: 1; }
+
+.button-danger {
+    background-color: #ef4444; /* Vermelho vibrante */
+    color: #ffffff;            /* Texto branco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;          /* Texto bem grosso */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;                  /* Espaço entre ícone e texto */
+    
+    /* A Sombra que dá o destaque */
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3); 
+    transition: all 0.2s;
+}
+
+.button-danger:hover {
+    background-color: #dc2626; /* Vermelho mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Sobe um pouquinho */
+    box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4); /* Sombra aumenta */
+}
+/* --- NOVA COR PARA 'PEDIDO RECEBIDO' (Roxo) --- */
+
+/* Na Tabela (Pílula) */
+.status-recebido { 
+    background-color: #f3e8ff !important; /* Roxo bem clarinho */
+    color: #7e22ce !important;           /* Roxo vibrante */
+}
+
+/* Nos Relatórios (Ícone Bolinha) */
+.icon-recebido { 
+    background-color: #f3e8ff !important; 
+    color: #7e22ce !important; 
+}   
+
+/* --- 10. MODAL DE DETALHES DA ORDEM --- */
+.modal-content { max-height: 90vh; overflow-y: auto; }
+
+.modal-header {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cor-fundo);
+}
+.modal-header h2 { border: none; padding: 0; margin: 0; }
+.modal-subtitle {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--cor-texto-claro);
+}
+
+.modal-body { display: flex; flex-direction: column; gap: 16px; }
+
+.detail-item { display: flex; align-items: flex-start; gap: 14px; }
+
+.detail-item .item-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    background-color: #f1f5f9;
+    color: #475569;
+}
+.detail-item:nth-child(1) .item-icon { background-color: #dbeafe; color: #1e40af; } /* cliente */
+.detail-item:nth-child(2) .item-icon { background-color: #f1f5f9; color: #475569; } /* descrição */
+.detail-item:nth-child(3) .item-icon { background-color: #fef3c7; color: #92400e; } /* material */
+.detail-item:nth-child(4) .item-icon { background-color: #d1fae5; color: #065f46; } /* data */
+
+.item-content { display: flex; flex-direction: column; min-width: 0; }
+.item-content .label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--cor-texto-claro);
+    margin-bottom: 2px;
+}
+.item-content .value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+    overflow-wrap: anywhere; /* quebra palavras muito longas em vez de estourar o modal */
+}
+
+.status-control-area {
+    margin-top: 4px;
+    padding: 16px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+.status-control-area label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--cor-header);
+}
+.status-control-area label i { margin-right: 6px; color: var(--cor-principal); }
+
+.select-wrapper select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fff !important;
+    cursor: pointer;
+}
+.select-wrapper select:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-fundo);
+}
+
+
+/* --- 11. TEXTO LONGO NA TABELA --- */
+.texto-truncado {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

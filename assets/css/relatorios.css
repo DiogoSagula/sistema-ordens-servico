@@ -1,0 +1,82 @@
+/* --- Títulos --- */
+.main-content h1 {
+    color: #0f172a !important; /* Azul escuro (para garantir que apareça) */
+    margin-bottom: 30px;
+}
+
+/* --- Grid dos Cards (Arrumado para não espalhar demais) --- */
+.stats-grid {
+    display: flex;             /* Flexbox alinha melhor que Grid neste caso */
+    flex-wrap: wrap;           /* Quebra linha se faltar espaço */
+    gap: 25px;                 /* Espaço entre cards */
+    justify-content: flex-start; /* Alinha tudo à esquerda */
+}
+
+/* --- O Cartão --- */
+.stat-card {
+    background-color: #fff;
+    border-radius: 12px;       /* Bordas mais redondinhas */
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    /* Tamanho Inteligente */
+    flex: 1 1 260px;           /* Largura ideal de 260px, mas estica se precisar */
+    max-width: 350px;          /* Trava a largura pra não ficar uma "tripa" na tela grande */
+    
+    /* Visual */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0; /* Borda cinza suave */
+    
+    /* Animação */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+    cursor: pointer;           /* Mãozinha para indicar clique */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #f8fafc; /* Leve destaque de cor no fundo */
+}
+
+/* --- Ícones (Bolinhas) --- */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Garante que a bolinha não fique oval */
+}
+
+/* --- Cores dos 5 Status (Agora sim!) --- */
+.icon-recebido   { background-color: #e0e7ff; color: #3730a3; } /* Roxo */
+.icon-aguardando { background-color: #fef3c7; color: #92400e; } /* Amarelo */
+.icon-producao   { background-color: #dbeafe; color: #1e40af; } /* Azul */
+.icon-pronto     { background-color: #d1fae5; color: #065f46; } /* Verde */
+.icon-finalizado { background-color: #f3f4f6; color: #4b5563; } /* Cinza */
+
+/* --- Texto dentro do Card --- */
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    color: #64748b; /* Cinza médio */
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a; /* Azul quase preto */
+    line-height: 1;
+}
+
+/* Removi chart-container e chart-placeholder pois não usamos mais */

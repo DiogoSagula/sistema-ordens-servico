@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --cor-laranja: #f58238;
+    --cor-azul-escuro: #212a3f;
+    --cor-azul-claro: #303c5a;
+    --cor-texto-claro: #e2e8f0;
+    --cor-borda: #475569;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: var(--cor-azul-claro);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-logo {
+    max-width: 250px;
+    margin-bottom: 20px;
+    mix-blend-mode: lighten; /* --- CORREÇÃO APLICADA AQUI --- */
+}
+
+.login-container h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-group .fa-user,
+.input-group .fa-lock {
+    position: absolute;
+    left: 15px;
+    top: 42px;
+    color: #94a3b8;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.options a {
+    color: var(--cor-texto-claro); /* Alterado para a cor padrão do texto (branco) */
+    text-decoration: none;
+    transition: color 0.3s ease;   /* Adicionado para uma transição de cor suave */
+}
+
+.options a:hover {
+    color: #e53e3e; /* Um tom de vermelho vivo ao passar o mouse */
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--cor-texto-claro); /* Garante a cor padrão branca/clara */
+    cursor: pointer;               /* Faz o mouse virar uma "mãozinha" */
+    transition: color 0.3s ease;   /* Adiciona a transição suave */
+}
+
+.remember-me:hover {
+    color: #e53e3e; /* Fica vermelho ao passar o mouse */
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor-laranja);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #fb923c;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 15px;
+    left: auto;
+    top: 42px;
+    color: #94a3b8;
+    cursor: pointer;
+    z-index: 2;
+}

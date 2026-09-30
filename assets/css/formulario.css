@@ -1,0 +1,96 @@
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-container h1 {
+    color: #0f172a !important;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.form-group .file-input {
+    padding: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 20px;
+}
+
+.button-secondary {
+    background-color: #f1f5f9;
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--cor-borda);
+    transition: background-color 0.3s;
+}
+.button-secondary:hover {
+    background-color: #e2e8f0;
+}
+/* --- CORREÇÃO DE CORES DOS INPUTS --- */
+input, select, textarea {
+    color: #1e293b !important; /* Cor escura (Azul quase preto) */
+    background-color: #ffffff !important; /* Fundo branco */
+    border: 1px solid #cbd5e1; /* Garante que a borda apareça */
+}
+
+/* Cor do texto de exemplo (Placeholder) */
+::placeholder {
+    color: #94a3b8 !important; /* Cinza claro */
+    opacity: 1;
+}
+
+/* Ajuste específico para quando o campo é focado/clicado */
+input:focus, select:focus, textarea:focus {
+    color: #0f172a !important; /* Cor ainda mais escura no foco */
+    border-color: var(--cor-principal) !important; /* Laranja no foco */
+    outline: none;
+}

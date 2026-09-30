@@ -1,0 +1,3 @@
+# Bloqueia acesso direto aos anexos pelo navegador (Apache 2.4).
+# Os arquivos só são entregues por baixar_anexo.php, depois de checar o login.
+Require all denied
